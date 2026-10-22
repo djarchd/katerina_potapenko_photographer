@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <!-- ===== HEAD: кодування, viewport, SEO, шрифти, стилі ===== -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Катерина Потапенко · фотограф: портрети, випускні, весілля, хрещення</title>
+  <meta name="description" content="Портретна, весільна та дитяча фотографія. Випускні альбоми для шкіл і садочків, хрещення, дні народження.">
+  <meta name="theme-color" content="#fdfcf9">
+  <meta property="og:title" content="Катерина Потапенко · фотограф">
+  <meta property="og:description" content="Портрети, випускні альбоми, весілля, хрещення та дні народження.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="img/hero.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти до змісту</a>
+
+  <!-- ===== ШАПКА: логотип + навігація + бургер ===== -->
+  <header class="header" id="top">
+    <div class="container header__inner">
+      <a class="logo" href="#top" aria-label="Катерина Потапенко, фотограф. На початок сторінки">
+        <svg class="logo__icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true" focusable="false">
+          <circle cx="20" cy="20" r="17"/><circle cx="20" cy="20" r="6"/>
+          <path d="M20 3l6 11M35.5 11.5L24 14M35.5 28.5L26 20M20 37l-6-11M4.5 28.5L16 26M4.5 11.5L14 20"/>
+        </svg>
+        <span class="logo__text">
+          <span class="logo__name">Катерина Потапенко</span>
+          <span class="logo__tagline">фотограф</span>
+        </span>
+      </a>
+
+      <button class="burger" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Відкрити меню">
+        <span class="burger__line"></span><span class="burger__line"></span><span class="burger__line"></span>
+      </button>
+
+      <nav class="nav" id="site-nav" aria-label="Головна навігація">
+        <ul class="nav__list">
+          <li class="nav__item"><a class="nav__link" href="#services">Послуги</a></li>
+          <li class="nav__item"><a class="nav__link" href="#portfolio">Роботи</a></li>
+          <li class="nav__item"><a class="nav__link" href="#about">Про мене</a></li>
+          <li class="nav__item"><a class="nav__link" href="#contact">Контакти</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ===== HERO: єдиний h1 + фото на тлі ===== -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero__inner">
+        <h1 class="hero__title" id="hero-title">Світло, емоції та тихі моменти</h1>
+        <p class="hero__text">Портрети, випускні альбоми, весілля, хрещення та дні народження. Знімаю природно, без постановочності.</p>
+        <a class="btn btn--primary" href="#contact">Обговорити зйомку</a>
+      </div>
+    </section>
+
+    <!-- ===== СЛАЙДЕР-СТРІЧКА: 8 слайдів, безперервний рух (клони створює script.js) ===== -->
+    <section class="slider" id="slider" aria-roledescription="карусель" aria-label="Приклади робіт">
+      <ul class="slider__track">
+        <li class="slider__item"><button class="slider__btn" type="button" data-lightbox data-gallery="strip" data-slide="0" aria-label="Відкрити фото на весь екран"><img class="slider__img" src="img/portfolio-01.svg" alt="Приклад портретної зйомки" width="1000" height="1250" loading="lazy"></button></li>
+        <li class="slider__item"><button class="slider__btn" type="button" data-lightbox data-gallery="strip" data-slide="1" aria-label="Відкрити фото на весь екран"><img class="slider__img" src="img/portfolio-02.svg" alt="Приклад зйомки випускного" width="1000" height="1250" loading="lazy"></button></li>
+        <li class="slider__item"><button class="slider__btn" type="button" data-lightbox data-gallery="strip" data-slide="2" aria-label="Відкрити фото на весь екран"><img class="slider__img" src="img/portfolio-03.svg" alt="Приклад весільної зйомки" width="1000" height="1250" loading="lazy"></button></li>
+        <li class="slider__item"><button class="slider__btn" type="button" data-lightbox data-gallery="strip" data-slide="3" aria-label="Відкрити фото на весь екран"><img class="slider__img" src="img/portfolio-04.svg" alt="Приклад зйомки хрещення" width="1000" height="1250" loading="lazy"></button></li>
+        <li class="slider__item"><button class="slider__btn" type="button" data-lightbox data-gallery="strip" data-slide="4" aria-label="Відкрити фото на весь екран"><img class="slider__img" src="img/portfolio-05.svg" alt="Приклад зйомки дня народження" width="1000" height="1250" loading="lazy"></button></li>
+        <li class="slider__item"><button class="slider__btn" type="button" data-lightbox data-gallery="strip" data-slide="5" aria-label="Відкрити фото на весь екран"><img class="slider__img" src="img/portfolio-06.svg" alt="Приклад сімейної зйомки" width="1000" height="1250" loading="lazy"></button></li>
+        <li class="slider__item"><button class="slider__btn" type="button" data-lightbox data-gallery="strip" data-slide="6" aria-label="Відкрити фото на весь екран"><img class="slider__img" src="img/portfolio-07.svg" alt="Приклад дитячого портрета" width="1000" height="1250" loading="lazy"></button></li>
+        <li class="slider__item"><button class="slider__btn" type="button" data-lightbox data-gallery="strip" data-slide="7" aria-label="Відкрити фото на весь екран"><img class="slider__img" src="img/portfolio-08.svg" alt="Приклад зйомки випускного альбому" width="1000" height="1250" loading="lazy"></button></li>
+      </ul>
+      <button class="slider__toggle" type="button" aria-pressed="false" aria-label="Призупинити анімацію стрічки">
+        <span class="slider__toggle-icon" aria-hidden="true"></span>
+      </button>
+    </section>
+
+    <!-- ===== ПОСЛУГИ ===== -->
+    <section class="section section--soft" id="services" aria-labelledby="services-title">
+      <div class="container">
+        <h2 class="section__title" id="services-title">Що я знімаю</h2>
+        <div class="services">
+          <article class="service"><h3 class="service__title">Портретна зйомка</h3><p class="service__text">Індивідуальні, сімейні та love story сесії в студії або на локації. Допомагаю розкритися перед камерою.</p></article>
+          <article class="service"><h3 class="service__title">Випускні альбоми</h3><p class="service__text">Школи та дитячі садки: груповий і індивідуальний портрет, живі кадри свята, верстка та друк альбому.</p></article>
+          <article class="service"><h3 class="service__title">Весілля</h3><p class="service__text">Від ранку нареченої до першого танцю. Репортажна зйомка без зайвого втручання.</p></article>
+          <article class="service"><h3 class="service__title">Хрещення</h3><p class="service__text">Спокійна зйомка в церкві та вдома, без спалаху під час обряду.</p></article>
+          <article class="service"><h3 class="service__title">Дні народження</h3><p class="service__text">Дитячі й сімейні свята: щирі емоції, гості, торт і маленькі деталі.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ПОРТФОЛІО: фільтри + галерея ===== -->
+    <section class="section" id="portfolio" aria-labelledby="portfolio-title">
+      <div class="container">
+        <h2 class="section__title" id="portfolio-title">Вибрані роботи</h2>
+
+        <div class="filters" role="group" aria-label="Фільтр за типом зйомки">
+          <button class="filters__btn filters__btn--active" type="button" data-filter="all" aria-pressed="true">Усі</button>
+          <button class="filters__btn" type="button" data-filter="portrait" aria-pressed="false">Портрет</button>
+          <button class="filters__btn" type="button" data-filter="graduation" aria-pressed="false">Випускний</button>
+          <button class="filters__btn" type="button" data-filter="wedding" aria-pressed="false">Весілля</button>
+          <button class="filters__btn" type="button" data-filter="baptism" aria-pressed="false">Хрещення</button>
+          <button class="filters__btn" type="button" data-filter="birthday" aria-pressed="false">День народження</button>
+        </div>
+
+        <!-- Щоб додати своє фото: змініть src, alt і data-caption -->
+        <ul class="gallery">
+          <li class="gallery__item" data-category="portrait"><button class="gallery__btn" type="button" data-lightbox data-gallery="portfolio" data-caption="Портрет"><img class="gallery__img" src="img/portfolio-01.svg" alt="Портрет дитини серед квітів" width="1000" height="1250" loading="lazy"></button></li>
+          <li class="gallery__item" data-category="graduation"><button class="gallery__btn" type="button" data-lightbox data-gallery="portfolio" data-caption="Випускний"><img class="gallery__img" src="img/portfolio-02.svg" alt="Випускники на груповому фото" width="1000" height="1250" loading="lazy"></button></li>
+          <li class="gallery__item" data-category="wedding"><button class="gallery__btn" type="button" data-lightbox data-gallery="portfolio" data-caption="Весілля"><img class="gallery__img" src="img/portfolio-03.svg" alt="Наречені під час весільної церемонії" width="1000" height="1250" loading="lazy"></button></li>
+          <li class="gallery__item" data-category="baptism"><button class="gallery__btn" type="button" data-lightbox data-gallery="portfolio" data-caption="Хрещення"><img class="gallery__img" src="img/portfolio-04.svg" alt="Хрещення малюка в церкві" width="1000" height="1250" loading="lazy"></button></li>
+          <li class="gallery__item" data-category="birthday"><button class="gallery__btn" type="button" data-lightbox data-gallery="portfolio" data-caption="День народження"><img class="gallery__img" src="img/portfolio-05.svg" alt="Іменинник біля торта зі свічками" width="1000" height="1250" loading="lazy"></button></li>
+          <li class="gallery__item" data-category="wedding"><button class="gallery__btn" type="button" data-lightbox data-gallery="portfolio" data-caption="Весілля"><img class="gallery__img" src="img/portfolio-06.svg" alt="Весільні деталі: букет і обручки" width="1000" height="1250" loading="lazy"></button></li>
+          <li class="gallery__item" data-category="portrait"><button class="gallery__btn" type="button" data-lightbox data-gallery="portfolio" data-caption="Портрет"><img class="gallery__img" src="img/portfolio-07.svg" alt="Сімейний портрет на природі" width="1000" height="1250" loading="lazy"></button></li>
+          <li class="gallery__item" data-category="graduation"><button class="gallery__btn" type="button" data-lightbox data-gallery="portfolio" data-caption="Випускний"><img class="gallery__img" src="img/portfolio-08.svg" alt="Випускниця дитячого садка з дипломом" width="1000" height="1250" loading="lazy"></button></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== ПРО МЕНЕ ===== -->
+    <section class="section section--soft" id="about" aria-labelledby="about-title">
+      <div class="container about">
+        <figure class="about__figure"><img class="about__img" src="img/about.svg" alt="Катерина Потапенко з фотокамерою" width="1000" height="1250" loading="lazy"></figure>
+        <div class="about__body">
+          <h2 class="section__title" id="about-title">Про мене</h2>
+          <p class="about__lead">Я фотографую людей так, щоб на знімках їх можна було впізнати: з їхніми жестами, поглядом і настроєм.</p>
+          <p class="about__text">Працюю з природним світлом, обробляю кожен кадр вручну й готую альбоми до друку. Коротка історія про досвід, підхід і те, що важливо для вас у зйомці.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== КОНТАКТИ: aside + форма ===== -->
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="container contact">
+        <aside class="contact__info" aria-label="Контактні дані">
+          <h2 class="section__title" id="contact-title">Давайте знімати</h2>
+          <ul class="contact__list">
+            <li class="contact__item"><span class="contact__label">Телефон</span><a class="contact__link" href="tel:+380955847116">+380 95 584 71 16</a></li>
+            <li class="contact__item"><span class="contact__label">Telegram</span><a class="contact__link" href="https://t.me/Katya_060">@Katya_060</a></li>
+            <li class="contact__item"><span class="contact__label">Instagram</span><a class="contact__link" href="https://www.instagram.com/katerina_photosmile/">@katerina_photosmile</a></li>
+            <li class="contact__item"><span class="contact__label">Місто</span><span class="contact__link">Ваше місто</span></li>
+          </ul>
+        </aside>
+
+        <form class="form" id="request-form" novalidate>
+          <div class="form__field"><label class="form__label" for="f-name">Ім’я</label><input class="form__control" id="f-name" name="name" type="text" required autocomplete="name"></div>
+          <div class="form__field"><label class="form__label" for="f-contact">Телефон або Telegram</label><input class="form__control" id="f-contact" name="contact" type="text" required autocomplete="tel"></div>
+          <div class="form__field"><label class="form__label" for="f-type">Тип зйомки</label>
+            <select class="form__control" id="f-type" name="type">
+              <option>Портрет</option><option>Випускний альбом</option><option>Весілля</option><option>Хрещення</option><option>День народження</option><option>Інше</option>
+            </select>
+          </div>
+          <div class="form__field"><label class="form__label" for="f-msg">Повідомлення</label><textarea class="form__control form__control--area" id="f-msg" name="msg" placeholder="Дата, місце, побажання"></textarea></div>
+          <button class="btn btn--primary" type="submit">Надіслати заявку</button>
+          <p class="form__status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== ПІДВАЛ ===== -->
+  <footer class="footer">
+    <div class="container"><p class="footer__text">© 2026 Катерина Потапенко</p></div>
+  </footer>
+
+  <!-- ===== ЛАЙТБОКС (модальне вікно) ===== -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Перегляд фото" hidden>
+    <button class="lightbox__btn lightbox__btn--close" type="button" aria-label="Закрити">&times;</button>
+    <button class="lightbox__btn lightbox__btn--prev" type="button" aria-label="Попереднє фото">&#8249;</button>
+    <figure class="lightbox__figure">
+      <img class="lightbox__img" src="" alt="">
+      <figcaption class="lightbox__caption" aria-live="polite"></figcaption>
+    </figure>
+    <button class="lightbox__btn lightbox__btn--next" type="button" aria-label="Наступне фото">&#8250;</button>
+  </div>
+</body>
+</html>
