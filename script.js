@@ -1,8 +1,5 @@
 'use strict';
 
-/* ===== НАЛАШТУВАННЯ ===== */
-const CONTACT_EMAIL = 'you@example.com';   // куди надходять заявки з форми
-
 const prefersReducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /* ===== 1. МОБІЛЬНЕ МЕНЮ (бургер) ===== */
@@ -160,22 +157,82 @@ function initLightbox() {
   });
 }
 
-/* ===== 6. ФОРМА ЗАЯВКИ (відкриває поштовий клієнт) ===== */
+/* ===== 6. ФОРМА ЗАЯВКИ (відправка через Formspree, без поштового клієнта) ===== */
+/* Адреса береться з атрибута action форми в index.html: https://formspree.io/f/ВАШ_ID */
 function initContactForm() {
   const form = document.getElementById('request-form');
   const status = document.getElementById('form-status');
-  if (!form) return;
+  const submit = form && form.querySelector('.form__submit');
+  if (!form || !submit) return;
 
-  form.addEventListener('submit', (e) => {
+  const label = submit.querySelector('.form__submit-text');
+  const defaultLabel = label.textContent;
+  const COOLDOWN_MS = 5000;        // після успіху кнопка ще 5 с заблокована
+  const TIMEOUT_MS = 15000;        // максимум очікування відповіді сервера
+  const MSG = {
+    success: 'Дякуємо! Ваша заявка успішно надіслана. Ми зв’яжемося з вами найближчим часом.',
+    error: 'Не вдалося надіслати заявку. Перевірте інтернет-з’єднання та спробуйте ще раз. Або напишіть нам у Telegram чи Instagram.',
+    notConfigured: 'Форму ще не підключено до Formspree: вкажіть свій ідентифікатор у атрибуті action форми.'
+  };
+  let isSubmitting = false;
+
+  const setStatus = (text, type) => {
+    status.textContent = text;
+    status.classList.remove('form__status--success', 'form__status--error');
+    if (type) status.classList.add(`form__status--${type}`);
+  };
+  const setLoading = (on) => {
+    isSubmitting = on;
+    submit.disabled = on;
+    submit.classList.toggle('btn--loading', on);
+    submit.setAttribute('aria-busy', String(on));
+    label.textContent = on ? 'Надсилаємо…' : defaultLabel;
+  };
+
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    if (!form.checkValidity()) {
+    if (isSubmitting) return;                         // захист від повторної відправки
+
+    ['name', 'contact'].forEach((n) => { form.elements[n].value = form.elements[n].value.trim(); });
+    if (!form.checkValidity()) {                      // обов'язкові поля
       form.reportValidity();
       return;
     }
-    const d = new FormData(form);
-    const body = `Ім’я: ${d.get('name')}\nКонтакт: ${d.get('contact')}\nТип: ${d.get('type')}\n\n${d.get('msg')}`;
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('Заявка на зйомку')}&body=${encodeURIComponent(body)}`;
-    status.textContent = 'Відкриваємо поштовий клієнт для надсилання заявки.';
+    if ((form.getAttribute('action') || '').includes('YOUR_FORM_ID')) {
+      setStatus(MSG.notConfigured, 'error');
+      return;
+    }
+
+    setStatus('', null);
+    setLoading(true);
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
+    let ok = false;
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' },
+        signal: controller.signal
+      });
+      ok = res.ok;
+    } catch (err) {
+      ok = false;                                     // мережа недоступна або тайм-аут
+    } finally {
+      clearTimeout(timer);
+    }
+
+    if (ok) {
+      form.reset();
+      setStatus(MSG.success, 'success');
+      submit.classList.remove('btn--loading');        // індикатор зникає, кнопка ще заблокована
+      submit.setAttribute('aria-busy', 'false');
+      label.textContent = defaultLabel;
+      setTimeout(() => { submit.disabled = false; isSubmitting = false; }, COOLDOWN_MS);
+    } else {
+      setLoading(false);                              // дані збережені, можна повторити
+      setStatus(MSG.error, 'error');
+    }
   });
 }
 

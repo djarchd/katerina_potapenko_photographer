@@ -10,11 +10,12 @@
   <meta property="og:title" content="Катерина Потапенко · фотограф">
   <meta property="og:description" content="Портрети, випускні альбоми, весілля, хрещення та дні народження.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="img/hero.jpg">
+  <meta property="og:image" content="img/hero.webp">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="img/hero.webp" type="image/webp">
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
@@ -63,14 +64,14 @@
     <!-- ===== СЛАЙДЕР-СТРІЧКА: 8 слайдів, безперервний рух (клони створює script.js) ===== -->
     <section class="slider" id="slider" aria-roledescription="карусель" aria-label="Приклади робіт">
       <ul class="slider__track">
-        <li class="slider__item"><button class="slider__btn" type="button" data-lightbox data-gallery="strip" data-slide="0" aria-label="Відкрити фото на весь екран"><img class="slider__img" src="img/portfolio-01.svg" alt="Приклад портретної зйомки" width="1000" height="1250" loading="lazy"></button></li>
-        <li class="slider__item"><button class="slider__btn" type="button" data-lightbox data-gallery="strip" data-slide="1" aria-label="Відкрити фото на весь екран"><img class="slider__img" src="img/portfolio-02.svg" alt="Приклад зйомки випускного" width="1000" height="1250" loading="lazy"></button></li>
-        <li class="slider__item"><button class="slider__btn" type="button" data-lightbox data-gallery="strip" data-slide="2" aria-label="Відкрити фото на весь екран"><img class="slider__img" src="img/portfolio-03.svg" alt="Приклад весільної зйомки" width="1000" height="1250" loading="lazy"></button></li>
-        <li class="slider__item"><button class="slider__btn" type="button" data-lightbox data-gallery="strip" data-slide="3" aria-label="Відкрити фото на весь екран"><img class="slider__img" src="img/portfolio-04.svg" alt="Приклад зйомки хрещення" width="1000" height="1250" loading="lazy"></button></li>
-        <li class="slider__item"><button class="slider__btn" type="button" data-lightbox data-gallery="strip" data-slide="4" aria-label="Відкрити фото на весь екран"><img class="slider__img" src="img/portfolio-05.svg" alt="Приклад зйомки дня народження" width="1000" height="1250" loading="lazy"></button></li>
-        <li class="slider__item"><button class="slider__btn" type="button" data-lightbox data-gallery="strip" data-slide="5" aria-label="Відкрити фото на весь екран"><img class="slider__img" src="img/portfolio-06.svg" alt="Приклад сімейної зйомки" width="1000" height="1250" loading="lazy"></button></li>
-        <li class="slider__item"><button class="slider__btn" type="button" data-lightbox data-gallery="strip" data-slide="6" aria-label="Відкрити фото на весь екран"><img class="slider__img" src="img/portfolio-07.svg" alt="Приклад дитячого портрета" width="1000" height="1250" loading="lazy"></button></li>
-        <li class="slider__item"><button class="slider__btn" type="button" data-lightbox data-gallery="strip" data-slide="7" aria-label="Відкрити фото на весь екран"><img class="slider__img" src="img/portfolio-08.svg" alt="Приклад зйомки випускного альбому" width="1000" height="1250" loading="lazy"></button></li>
+        <li class="slider__item"><button class="slider__btn" type="button" data-lightbox data-gallery="strip" data-slide="0" data-full="img/full/01.webp" data-caption="Портрет" aria-label="Відкрити фото на весь екран"><img class="slider__img" src="img/thumbs/01.webp" alt="Усміхнена дівчинка в капюшоні з букетом айстр" width="800" height="1000" loading="lazy" decoding="async"></button></li>
+        <li class="slider__item"><button class="slider__btn" type="button" data-lightbox data-gallery="strip" data-slide="1" data-full="img/full/02.webp" data-caption="Весілля" aria-label="Відкрити фото на весь екран"><img class="slider__img" src="img/thumbs/02.webp" alt="Наречені цілуються під час весільної прогулянки" width="800" height="1000" loading="lazy" decoding="async"></button></li>
+        <li class="slider__item"><button class="slider__btn" type="button" data-lightbox data-gallery="strip" data-slide="2" data-full="img/full/04.webp" data-caption="Випускний" aria-label="Відкрити фото на весь екран"><img class="slider__img" src="img/thumbs/04.webp" alt="Випускниця садочка в рожевій сукні біля таблички «Випуск 2026»" width="800" height="1000" loading="lazy" decoding="async"></button></li>
+        <li class="slider__item"><button class="slider__btn" type="button" data-lightbox data-gallery="strip" data-slide="3" data-full="img/full/06.webp" data-caption="Портрет" aria-label="Відкрити фото на весь екран"><img class="slider__img" src="img/thumbs/06.webp" alt="Портрет дівчини в сірому пальті біля ялинки" width="800" height="1000" loading="lazy" decoding="async"></button></li>
+        <li class="slider__item"><button class="slider__btn" type="button" data-lightbox data-gallery="strip" data-slide="4" data-full="img/full/08.webp" data-caption="Портрет" aria-label="Відкрити фото на весь екран"><img class="slider__img" src="img/thumbs/08.webp" alt="Дівчинка в солом’яному капелюсі в лавандовому полі" width="800" height="1000" loading="lazy" decoding="async"></button></li>
+        <li class="slider__item"><button class="slider__btn" type="button" data-lightbox data-gallery="strip" data-slide="5" data-full="img/full/12.webp" data-caption="Портрет" aria-label="Відкрити фото на весь екран"><img class="slider__img" src="img/thumbs/12.webp" alt="Дівчина біля гілки цвітучої сакури" width="800" height="1000" loading="lazy" decoding="async"></button></li>
+        <li class="slider__item"><button class="slider__btn" type="button" data-lightbox data-gallery="strip" data-slide="6" data-full="img/full/14.webp" data-caption="Love story" aria-label="Відкрити фото на весь екран"><img class="slider__img" src="img/thumbs/14.webp" alt="Пара у вишиванках серед весняного гілля" width="800" height="1000" loading="lazy" decoding="async"></button></li>
+        <li class="slider__item"><button class="slider__btn" type="button" data-lightbox data-gallery="strip" data-slide="7" data-full="img/full/15.webp" data-caption="Портрет" aria-label="Відкрити фото на весь екран"><img class="slider__img" src="img/thumbs/15.webp" alt="Маленька дівчинка в капелюшку з букетом лаванди" width="800" height="1000" loading="lazy" decoding="async"></button></li>
       </ul>
       <button class="slider__toggle" type="button" aria-pressed="false" aria-label="Призупинити анімацію стрічки">
         <span class="slider__toggle-icon" aria-hidden="true"></span>
@@ -107,14 +108,15 @@
 
         <!-- Щоб додати своє фото: змініть src, alt і data-caption -->
         <ul class="gallery">
-          <li class="gallery__item" data-category="portrait"><button class="gallery__btn" type="button" data-lightbox data-gallery="portfolio" data-caption="Портрет"><img class="gallery__img" src="img/portfolio-01.svg" alt="Портрет дитини серед квітів" width="1000" height="1250" loading="lazy"></button></li>
-          <li class="gallery__item" data-category="graduation"><button class="gallery__btn" type="button" data-lightbox data-gallery="portfolio" data-caption="Випускний"><img class="gallery__img" src="img/portfolio-02.svg" alt="Випускники на груповому фото" width="1000" height="1250" loading="lazy"></button></li>
-          <li class="gallery__item" data-category="wedding"><button class="gallery__btn" type="button" data-lightbox data-gallery="portfolio" data-caption="Весілля"><img class="gallery__img" src="img/portfolio-03.svg" alt="Наречені під час весільної церемонії" width="1000" height="1250" loading="lazy"></button></li>
-          <li class="gallery__item" data-category="baptism"><button class="gallery__btn" type="button" data-lightbox data-gallery="portfolio" data-caption="Хрещення"><img class="gallery__img" src="img/portfolio-04.svg" alt="Хрещення малюка в церкві" width="1000" height="1250" loading="lazy"></button></li>
-          <li class="gallery__item" data-category="birthday"><button class="gallery__btn" type="button" data-lightbox data-gallery="portfolio" data-caption="День народження"><img class="gallery__img" src="img/portfolio-05.svg" alt="Іменинник біля торта зі свічками" width="1000" height="1250" loading="lazy"></button></li>
-          <li class="gallery__item" data-category="wedding"><button class="gallery__btn" type="button" data-lightbox data-gallery="portfolio" data-caption="Весілля"><img class="gallery__img" src="img/portfolio-06.svg" alt="Весільні деталі: букет і обручки" width="1000" height="1250" loading="lazy"></button></li>
-          <li class="gallery__item" data-category="portrait"><button class="gallery__btn" type="button" data-lightbox data-gallery="portfolio" data-caption="Портрет"><img class="gallery__img" src="img/portfolio-07.svg" alt="Сімейний портрет на природі" width="1000" height="1250" loading="lazy"></button></li>
-          <li class="gallery__item" data-category="graduation"><button class="gallery__btn" type="button" data-lightbox data-gallery="portfolio" data-caption="Випускний"><img class="gallery__img" src="img/portfolio-08.svg" alt="Випускниця дитячого садка з дипломом" width="1000" height="1250" loading="lazy"></button></li>
+          <li class="gallery__item" data-category="baptism"><button class="gallery__btn" type="button" data-lightbox data-gallery="portfolio" data-full="img/full/03.webp" data-caption="Хрещення" aria-label="Відкрити фото на весь екран"><img class="gallery__img" src="img/thumbs/03.webp" alt="Священник поливає водою голову немовляти під час таїнства хрещення" width="800" height="1000" loading="lazy" decoding="async"></button></li>
+          <li class="gallery__item" data-category="birthday"><button class="gallery__btn" type="button" data-lightbox data-gallery="portfolio" data-full="img/full/05.webp" data-caption="День народження" aria-label="Відкрити фото на весь екран"><img class="gallery__img" src="img/thumbs/05.webp" alt="Іменинниця на тлі арки з повітряних кульок «Happy Birthday»" width="800" height="1000" loading="lazy" decoding="async"></button></li>
+          <li class="gallery__item" data-category="wedding"><button class="gallery__btn" type="button" data-lightbox data-gallery="portfolio" data-full="img/full/07.webp" data-caption="Весілля" aria-label="Відкрити фото на весь екран"><img class="gallery__img" src="img/thumbs/07.webp" alt="Наречені обіймаються з букетом білих троянд біля колон" width="800" height="1000" loading="lazy" decoding="async"></button></li>
+          <li class="gallery__item" data-category="graduation"><button class="gallery__btn" type="button" data-lightbox data-gallery="portfolio" data-full="img/full/09.webp" data-caption="Випускний" aria-label="Відкрити фото на весь екран"><img class="gallery__img" src="img/thumbs/09.webp" alt="Портрет вихованки садочка за столом" width="800" height="1000" loading="lazy" decoding="async"></button></li>
+          <li class="gallery__item" data-category="portrait"><button class="gallery__btn" type="button" data-lightbox data-gallery="portfolio" data-full="img/full/10.webp" data-caption="Портрет" aria-label="Відкрити фото на весь екран"><img class="gallery__img" src="img/thumbs/10.webp" alt="Жінка в білій сукні з мискою черешень у лавандовому полі" width="800" height="1000" loading="lazy" decoding="async"></button></li>
+          <li class="gallery__item" data-category="wedding"><button class="gallery__btn" type="button" data-lightbox data-gallery="portfolio" data-full="img/full/11.webp" data-caption="Весілля" aria-label="Відкрити фото на весь екран"><img class="gallery__img" src="img/thumbs/11.webp" alt="Обручки на букеті з білих троянд та евкаліпта" width="800" height="1000" loading="lazy" decoding="async"></button></li>
+          <li class="gallery__item" data-category="portrait"><button class="gallery__btn" type="button" data-lightbox data-gallery="portfolio" data-full="img/full/13.webp" data-caption="Сімейний портрет" aria-label="Відкрити фото на весь екран"><img class="gallery__img" src="img/thumbs/13.webp" alt="Мама з новонародженим малюком на руках" width="800" height="1000" loading="lazy" decoding="async"></button></li>
+          <li class="gallery__item" data-category="portrait"><button class="gallery__btn" type="button" data-lightbox data-gallery="portfolio" data-full="img/full/16.webp" data-caption="Портрет" aria-label="Відкрити фото на весь екран"><img class="gallery__img" src="img/thumbs/16.webp" alt="Портрет дівчини в хутряній шубі в профіль" width="800" height="1000" loading="lazy" decoding="async"></button></li>
+          <li class="gallery__item" data-category="portrait"><button class="gallery__btn" type="button" data-lightbox data-gallery="portfolio" data-full="img/full/17.webp" data-caption="Новонароджені" aria-label="Відкрити фото на весь екран"><img class="gallery__img" src="img/thumbs/17.webp" alt="Мама схиляється над новонародженим малюком" width="800" height="1000" loading="lazy" decoding="async"></button></li>
         </ul>
       </div>
     </section>
@@ -144,7 +146,11 @@
           </ul>
         </aside>
 
-        <form class="form" id="request-form" novalidate>
+        <!-- Formspree: заявки надходять на форму mbggrndj -->
+        <form class="form" id="request-form" action="https://formspree.io/f/mbggrndj" method="POST" novalidate>
+          <input type="hidden" name="_subject" value="Нова заявка на зйомку з сайту">
+          <!-- Захист від ботів (honeypot): людина це поле не бачить -->
+          <div class="form__honeypot" aria-hidden="true"><label>Не заповнюйте це поле<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
           <div class="form__field"><label class="form__label" for="f-name">Ім’я</label><input class="form__control" id="f-name" name="name" type="text" required autocomplete="name"></div>
           <div class="form__field"><label class="form__label" for="f-contact">Телефон або Telegram</label><input class="form__control" id="f-contact" name="contact" type="text" required autocomplete="tel"></div>
           <div class="form__field"><label class="form__label" for="f-type">Тип зйомки</label>
@@ -153,7 +159,7 @@
             </select>
           </div>
           <div class="form__field"><label class="form__label" for="f-msg">Повідомлення</label><textarea class="form__control form__control--area" id="f-msg" name="msg" placeholder="Дата, місце, побажання"></textarea></div>
-          <button class="btn btn--primary" type="submit">Надіслати заявку</button>
+          <button class="btn btn--primary form__submit" type="submit"><span class="form__submit-text">Надіслати заявку</span><span class="btn__spinner" aria-hidden="true"></span></button>
           <p class="form__status" id="form-status" role="status" aria-live="polite"></p>
         </form>
       </div>
