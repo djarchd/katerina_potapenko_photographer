@@ -43,6 +43,17 @@ function initPortfolioFilter() {
   const items = document.querySelectorAll('.gallery__item');
   if (!buttons.length) return;
 
+  const applyFilter = (filter) => {
+    items.forEach((item) => {
+      const isFeatured = item.dataset.featured === 'true';
+      const isMatch = filter === 'all'
+        ? isFeatured
+        : item.dataset.category === filter;
+
+      item.hidden = !isMatch;
+    });
+  };
+
   buttons.forEach((btn) => {
     btn.addEventListener('click', () => {
       const filter = btn.dataset.filter;
@@ -51,9 +62,12 @@ function initPortfolioFilter() {
         b.classList.toggle('filters__btn--active', active);
         b.setAttribute('aria-pressed', String(active));
       });
-      items.forEach((item) => { item.hidden = !(filter === 'all' || item.dataset.category === filter); });
+
+      applyFilter(filter);
     });
   });
+
+  applyFilter('all');
 }
 
 /* ===== 4. СЛАЙДЕР-СТРІЧКА: клонування для безшовного циклу + пауза ===== */
