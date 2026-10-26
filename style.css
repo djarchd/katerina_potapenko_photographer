@@ -3,16 +3,16 @@
 .filters__btn { font: inherit; font-size: 1rem; font-weight: 400; padding: .5rem 1.1rem; background: var(--color-white); color: var(--color-ink); border: 1px solid var(--color-line); border-radius: var(--radius-pill); cursor: pointer; transition: border-color var(--ease), background var(--ease), color var(--ease); }
 .filters__btn:hover { border-color: var(--color-accent); }
 .filters__btn--active { background: var(--color-accent); border-color: var(--color-accent); color: var(--color-white); }
+
 .gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .625rem; }
 .gallery__item { aspect-ratio: 4 / 5; min-width: 0; }
 .gallery__item[hidden] { display: none !important; }
+
 .gallery__btn { display: block; width: 100%; height: 100%; padding: 0; border: 0; background: var(--color-soft); border-radius: var(--radius-s); overflow: hidden; cursor: zoom-in; position: relative; }
 .gallery__img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s ease; }
-.gallery__btn:hover .gallery__img,
-.gallery__btn:focus-visible .gallery__img { transform: scale(1.04); }
+
 .gallery__btn::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(246,242,234,.92) 0%, rgba(246,242,234,.55) 22%, rgba(246,242,234,0) 55%); pointer-events: none; transition: opacity .4s ease; }
-.gallery__btn:hover::after,
-.gallery__btn:focus-visible::after { opacity: 0; }
+.gallery__btn:hover::after, .gallery__btn:focus-visible::after { opacity: 0; }
 
 /* ===== 9. ПРО МЕНЕ ===== */
 .about { display: grid; gap: 2.25rem; align-items: start; }
