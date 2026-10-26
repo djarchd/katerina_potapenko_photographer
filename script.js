@@ -2,7 +2,6 @@
 
 const prefersReducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-/* ===== 1. МОБІЛЬНЕ МЕНЮ (бургер) ===== */
 function initMobileMenu() {
   const burger = document.querySelector('.burger');
   const nav = document.querySelector('.nav');
@@ -20,7 +19,6 @@ function initMobileMenu() {
   window.matchMedia('(min-width: 48em)').addEventListener('change', (e) => { if (e.matches) setOpen(false); });
 }
 
-/* ===== 2. ПЛАВНА ПРОКРУТКА ПО ЯКОРЯХ ===== */
 function initSmoothScroll() {
   document.addEventListener('click', (e) => {
     const link = e.target.closest('a[href^="#"]');
@@ -37,7 +35,6 @@ function initSmoothScroll() {
   });
 }
 
-/* ===== 3. ФІЛЬТР ПОРТФОЛІО ===== */
 function initPortfolioFilter() {
   const buttons = document.querySelectorAll('.filters__btn');
   const items = document.querySelectorAll('.gallery__item');
@@ -70,14 +67,12 @@ function initPortfolioFilter() {
   applyFilter('all');
 }
 
-/* ===== 4. СЛАЙДЕР-СТРІЧКА: клонування для безшовного циклу + пауза ===== */
 function initSlider() {
   const slider = document.getElementById('slider');
   const track = slider && slider.querySelector('.slider__track');
   const toggle = slider && slider.querySelector('.slider__toggle');
-  if (!track) return;
+  if (!track || !toggle) return;
 
-  // дублюємо слайди: анімація зсуває стрічку рівно на половину довжини
   [...track.children].forEach((item, i) => {
     const clone = item.cloneNode(true);
     clone.dataset.cloneOf = i;
@@ -88,7 +83,6 @@ function initSlider() {
     track.appendChild(clone);
   });
 
-  // кнопка паузи/відтворення (доступність для рухомого контенту)
   toggle.addEventListener('click', () => {
     const paused = slider.classList.toggle('slider--paused');
     toggle.setAttribute('aria-pressed', String(paused));
@@ -96,7 +90,6 @@ function initSlider() {
   });
 }
 
-/* ===== 5. ЛАЙТБОКС (перегортування, клавіатура, свайп) ===== */
 function initLightbox() {
   const box = document.getElementById('lightbox');
   if (!box) return;
@@ -115,9 +108,7 @@ function initLightbox() {
       img.src = src;
       img.alt = alt;
       caption.textContent = label;
-      requestAnimationFrame(() => {
-        img.classList.remove('lightbox__img--fade');
-      });
+      requestAnimationFrame(() => img.classList.remove('lightbox__img--fade'));
     };
     next.onerror = () => {
       img.src = src;
@@ -187,8 +178,6 @@ function initLightbox() {
   });
 }
 
-/* ===== 6. ФОРМА ЗАЯВКИ (відправка через Formspree, без поштового клієнта) ===== */
-/* Адреса береться з атрибута action форми в index.html: https://formspree.io/f/ВАШ_ID */
 function initContactForm() {
   const form = document.getElementById('request-form');
   const status = document.getElementById('form-status');
@@ -211,6 +200,7 @@ function initContactForm() {
     status.classList.remove('form__status--success', 'form__status--error');
     if (type) status.classList.add(`form__status--${type}`);
   };
+
   const setLoading = (on) => {
     isSubmitting = on;
     submit.disabled = on;
@@ -266,7 +256,6 @@ function initContactForm() {
   });
 }
 
-/* ===== ЗАПУСК ===== */
 document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   initSmoothScroll();
@@ -275,4 +264,3 @@ document.addEventListener('DOMContentLoaded', () => {
   initLightbox();
   initContactForm();
 });
-
