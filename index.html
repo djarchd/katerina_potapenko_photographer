@@ -92,34 +92,169 @@
       </div>
     </section>
 
-    <!-- ===== ПОРТФОЛІО: фільтри + галерея ===== -->
-    <section class="section" id="portfolio" aria-labelledby="portfolio-title">
-      <div class="container">
-        <h2 class="section__title" id="portfolio-title">Вибрані роботи</h2>
+   <!-- ===== ПОРТФОЛІО: фільтри + галерея ===== -->
+<section class="section" id="portfolio" aria-labelledby="portfolio-title">
+  <div class="container">
+    <h2 class="section__title" id="portfolio-title">Вибрані роботи</h2>
 
-        <div class="filters" role="group" aria-label="Фільтр за типом зйомки">
-          <button class="filters__btn filters__btn--active" type="button" data-filter="all" aria-pressed="true">Усі</button>
-          <button class="filters__btn" type="button" data-filter="portrait" aria-pressed="false">Портрет</button>
-          <button class="filters__btn" type="button" data-filter="graduation" aria-pressed="false">Випускний</button>
-          <button class="filters__btn" type="button" data-filter="wedding" aria-pressed="false">Весілля</button>
-          <button class="filters__btn" type="button" data-filter="baptism" aria-pressed="false">Хрещення</button>
-          <button class="filters__btn" type="button" data-filter="birthday" aria-pressed="false">День народження</button>
-        </div>
+    <div class="filters" role="group" aria-label="Фільтр за типом зйомки">
+      <button class="filters__btn filters__btn--active" type="button" data-filter="all" aria-pressed="true">Усі</button>
+      <button class="filters__btn" type="button" data-filter="portrait" aria-pressed="false">Портрет</button>
+      <button class="filters__btn" type="button" data-filter="graduation" aria-pressed="false">Випускний</button>
+      <button class="filters__btn" type="button" data-filter="wedding" aria-pressed="false">Весілля</button>
+      <button class="filters__btn" type="button" data-filter="baptism" aria-pressed="false">Хрещення</button>
+      <button class="filters__btn" type="button" data-filter="birthday" aria-pressed="false">День народження</button>
+    </div>
 
-        <!-- Щоб додати своє фото: змініть src, alt і data-caption -->
-        <ul class="gallery">
-          <li class="gallery__item" data-category="baptism"><button class="gallery__btn" type="button" data-lightbox data-gallery="portfolio" data-full="img/full/03.webp" data-caption="Хрещення" aria-label="Відкрити фото на весь екран"><img class="gallery__img" src="img/thumbs/03.webp" alt="Священник поливає водою голову немовляти під час таїнства хрещення" width="800" height="1000" loading="lazy" decoding="async"></button></li>
-          <li class="gallery__item" data-category="birthday"><button class="gallery__btn" type="button" data-lightbox data-gallery="portfolio" data-full="img/full/05.webp" data-caption="День народження" aria-label="Відкрити фото на весь екран"><img class="gallery__img" src="img/thumbs/05.webp" alt="Іменинниця на тлі арки з повітряних кульок «Happy Birthday»" width="800" height="1000" loading="lazy" decoding="async"></button></li>
-          <li class="gallery__item" data-category="wedding"><button class="gallery__btn" type="button" data-lightbox data-gallery="portfolio" data-full="img/full/07.webp" data-caption="Весілля" aria-label="Відкрити фото на весь екран"><img class="gallery__img" src="img/thumbs/07.webp" alt="Наречені обіймаються з букетом білих троянд біля колон" width="800" height="1000" loading="lazy" decoding="async"></button></li>
-          <li class="gallery__item" data-category="graduation"><button class="gallery__btn" type="button" data-lightbox data-gallery="portfolio" data-full="img/full/09.webp" data-caption="Випускний" aria-label="Відкрити фото на весь екран"><img class="gallery__img" src="img/thumbs/09.webp" alt="Портрет вихованки садочка за столом" width="800" height="1000" loading="lazy" decoding="async"></button></li>
-          <li class="gallery__item" data-category="portrait"><button class="gallery__btn" type="button" data-lightbox data-gallery="portfolio" data-full="img/full/10.webp" data-caption="Портрет" aria-label="Відкрити фото на весь екран"><img class="gallery__img" src="img/thumbs/10.webp" alt="Жінка в білій сукні з мискою черешень у лавандовому полі" width="800" height="1000" loading="lazy" decoding="async"></button></li>
-          <li class="gallery__item" data-category="wedding"><button class="gallery__btn" type="button" data-lightbox data-gallery="portfolio" data-full="img/full/11.webp" data-caption="Весілля" aria-label="Відкрити фото на весь екран"><img class="gallery__img" src="img/thumbs/11.webp" alt="Обручки на букеті з білих троянд та евкаліпта" width="800" height="1000" loading="lazy" decoding="async"></button></li>
-          <li class="gallery__item" data-category="portrait"><button class="gallery__btn" type="button" data-lightbox data-gallery="portfolio" data-full="img/full/13.webp" data-caption="Сімейний портрет" aria-label="Відкрити фото на весь екран"><img class="gallery__img" src="img/thumbs/13.webp" alt="Мама з новонародженим малюком на руках" width="800" height="1000" loading="lazy" decoding="async"></button></li>
-          <li class="gallery__item" data-category="portrait"><button class="gallery__btn" type="button" data-lightbox data-gallery="portfolio" data-full="img/full/16.webp" data-caption="Портрет" aria-label="Відкрити фото на весь екран"><img class="gallery__img" src="img/thumbs/16.webp" alt="Портрет дівчини в хутряній шубі в профіль" width="800" height="1000" loading="lazy" decoding="async"></button></li>
-          <li class="gallery__item" data-category="portrait"><button class="gallery__btn" type="button" data-lightbox data-gallery="portfolio" data-full="img/full/17.webp" data-caption="Новонароджені" aria-label="Відкрити фото на весь екран"><img class="gallery__img" src="img/thumbs/17.webp" alt="Мама схиляється над новонародженим малюком" width="800" height="1000" loading="lazy" decoding="async"></button></li>
-        </ul>
-      </div>
-    </section>
+    <ul class="gallery">
+      <!-- Базові 9 фото: показуються в "Усі" -->
+      <li class="gallery__item" data-category="baptism" data-featured="true">
+        <button class="gallery__btn" type="button" data-lightbox data-gallery="portfolio" data-full="img/full/03.webp" data-caption="Хрещення">
+          <img class="gallery__img" src="img/thumbs/03.webp" alt="Хрещення" loading="lazy">
+        </button>
+      </li>
+
+      <li class="gallery__item" data-category="birthday" data-featured="true">
+        <button class="gallery__btn" type="button" data-lightbox data-gallery="portfolio" data-full="img/full/05.webp" data-caption="День народження">
+          <img class="gallery__img" src="img/thumbs/05.webp" alt="День народження" loading="lazy">
+        </button>
+      </li>
+
+      <li class="gallery__item" data-category="wedding" data-featured="true">
+        <button class="gallery__btn" type="button" data-lightbox data-gallery="portfolio" data-full="img/full/07.webp" data-caption="Весілля">
+          <img class="gallery__img" src="img/thumbs/07.webp" alt="Весілля" loading="lazy">
+        </button>
+      </li>
+
+      <li class="gallery__item" data-category="graduation" data-featured="true">
+        <button class="gallery__btn" type="button" data-lightbox data-gallery="portfolio" data-full="img/full/09.webp" data-caption="Випускний">
+          <img class="gallery__img" src="img/thumbs/09.webp" alt="Випускний" loading="lazy">
+        </button>
+      </li>
+
+      <li class="gallery__item" data-category="portrait" data-featured="true">
+        <button class="gallery__btn" type="button" data-lightbox data-gallery="portfolio" data-full="img/full/10.webp" data-caption="Портрет">
+          <img class="gallery__img" src="img/thumbs/10.webp" alt="Портрет" loading="lazy">
+        </button>
+      </li>
+
+      <li class="gallery__item" data-category="wedding" data-featured="true">
+        <button class="gallery__btn" type="button" data-lightbox data-gallery="portfolio" data-full="img/full/11.webp" data-caption="Весілля">
+          <img class="gallery__img" src="img/thumbs/11.webp" alt="Весілля" loading="lazy">
+        </button>
+      </li>
+
+      <li class="gallery__item" data-category="portrait" data-featured="true">
+        <button class="gallery__btn" type="button" data-lightbox data-gallery="portfolio" data-full="img/full/13.webp" data-caption="Сімейний портрет">
+          <img class="gallery__img" src="img/thumbs/13.webp" alt="Сімейний портрет" loading="lazy">
+        </button>
+      </li>
+
+      <li class="gallery__item" data-category="portrait" data-featured="true">
+        <button class="gallery__btn" type="button" data-lightbox data-gallery="portfolio" data-full="img/full/16.webp" data-caption="Портрет">
+          <img class="gallery__img" src="img/thumbs/16.webp" alt="Портрет" loading="lazy">
+        </button>
+      </li>
+
+      <li class="gallery__item" data-category="portrait" data-featured="true">
+        <button class="gallery__btn" type="button" data-lightbox data-gallery="portfolio" data-full="img/full/17.webp" data-caption="Новонароджені">
+          <img class="gallery__img" src="img/thumbs/17.webp" alt="Новонароджені" loading="lazy">
+        </button>
+      </li>
+
+      <!-- Допоміжні фото: видимі лише при виборі відповідної категорії -->
+      <li class="gallery__item" data-category="portrait">
+        <button class="gallery__btn" type="button" data-lightbox data-gallery="portfolio" data-full="img/full/01.webp" data-caption="Портрет додатковий 1">
+          <img class="gallery__img" src="img/thumbs/01.webp" alt="Портрет додатковий 1" loading="lazy">
+        </button>
+      </li>
+
+      <li class="gallery__item" data-category="portrait">
+        <button class="gallery__btn" type="button" data-lightbox data-gallery="portfolio" data-full="img/full/02.webp" data-caption="Портрет додатковий 2">
+          <img class="gallery__img" src="img/thumbs/02.webp" alt="Портрет додатковий 2" loading="lazy">
+        </button>
+      </li>
+
+      <li class="gallery__item" data-category="portrait">
+        <button class="gallery__btn" type="button" data-lightbox data-gallery="portfolio" data-full="img/full/10.webp" data-caption="Портрет додатковий 3">
+          <img class="gallery__img" src="img/thumbs/10.webp" alt="Портрет додатковий 3" loading="lazy">
+        </button>
+      </li>
+
+      <li class="gallery__item" data-category="graduation">
+        <button class="gallery__btn" type="button" data-lightbox data-gallery="portfolio" data-full="img/full/04.webp" data-caption="Випускний додатковий 1">
+          <img class="gallery__img" src="img/thumbs/04.webp" alt="Випускний додатковий 1" loading="lazy">
+        </button>
+      </li>
+
+      <li class="gallery__item" data-category="graduation">
+        <button class="gallery__btn" type="button" data-lightbox data-gallery="portfolio" data-full="img/full/09.webp" data-caption="Випускний додатковий 2">
+          <img class="gallery__img" src="img/thumbs/09.webp" alt="Випускний додатковий 2" loading="lazy">
+        </button>
+      </li>
+
+      <li class="gallery__item" data-category="graduation">
+        <button class="gallery__btn" type="button" data-lightbox data-gallery="portfolio" data-full="img/full/11.webp" data-caption="Випускний додатковий 3">
+          <img class="gallery__img" src="img/thumbs/11.webp" alt="Випускний додатковий 3" loading="lazy">
+        </button>
+      </li>
+
+      <li class="gallery__item" data-category="wedding">
+        <button class="gallery__btn" type="button" data-lightbox data-gallery="portfolio" data-full="img/full/02.webp" data-caption="Весілля додаткове 1">
+          <img class="gallery__img" src="img/thumbs/02.webp" alt="Весілля додаткове 1" loading="lazy">
+        </button>
+      </li>
+
+      <li class="gallery__item" data-category="wedding">
+        <button class="gallery__btn" type="button" data-lightbox data-gallery="portfolio" data-full="img/full/07.webp" data-caption="Весілля додаткове 2">
+          <img class="gallery__img" src="img/thumbs/07.webp" alt="Весілля додаткове 2" loading="lazy">
+        </button>
+      </li>
+
+      <li class="gallery__item" data-category="wedding">
+        <button class="gallery__btn" type="button" data-lightbox data-gallery="portfolio" data-full="img/full/14.webp" data-caption="Весілля додаткове 3">
+          <img class="gallery__img" src="img/thumbs/14.webp" alt="Весілля додаткове 3" loading="lazy">
+        </button>
+      </li>
+
+      <li class="gallery__item" data-category="baptism">
+        <button class="gallery__btn" type="button" data-lightbox data-gallery="portfolio" data-full="img/full/03.webp" data-caption="Хрещення додаткове 1">
+          <img class="gallery__img" src="img/thumbs/03.webp" alt="Хрещення додаткове 1" loading="lazy">
+        </button>
+      </li>
+
+      <li class="gallery__item" data-category="baptism">
+        <button class="gallery__btn" type="button" data-lightbox data-gallery="portfolio" data-full="img/full/05.webp" data-caption="Хрещення додаткове 2">
+          <img class="gallery__img" src="img/thumbs/05.webp" alt="Хрещення додаткове 2" loading="lazy">
+        </button>
+      </li>
+
+      <li class="gallery__item" data-category="baptism">
+        <button class="gallery__btn" type="button" data-lightbox data-gallery="portfolio" data-full="img/full/12.webp" data-caption="Хрещення додаткове 3">
+          <img class="gallery__img" src="img/thumbs/12.webp" alt="Хрещення додаткове 3" loading="lazy">
+        </button>
+      </li>
+
+      <li class="gallery__item" data-category="birthday">
+        <button class="gallery__btn" type="button" data-lightbox data-gallery="portfolio" data-full="img/full/05.webp" data-caption="День народження додатковий 1">
+          <img class="gallery__img" src="img/thumbs/05.webp" alt="День народження додатковий 1" loading="lazy">
+        </button>
+      </li>
+
+      <li class="gallery__item" data-category="birthday">
+        <button class="gallery__btn" type="button" data-lightbox data-gallery="portfolio" data-full="img/full/11.webp" data-caption="День народження додатковий 2">
+          <img class="gallery__img" src="img/thumbs/11.webp" alt="День народження додатковий 2" loading="lazy">
+        </button>
+      </li>
+
+      <li class="gallery__item" data-category="birthday">
+        <button class="gallery__btn" type="button" data-lightbox data-gallery="portfolio" data-full="img/full/16.webp" data-caption="День народження додатковий 3">
+          <img class="gallery__img" src="img/thumbs/16.webp" alt="День народження додатковий 3" loading="lazy">
+        </button>
+      </li>
+    </ul>
+  </div>
+</section>
 
     <!-- ===== ПРО МЕНЕ ===== -->
     <section class="section section--soft" id="about" aria-labelledby="about-title">
