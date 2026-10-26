@@ -94,21 +94,37 @@ function initLightbox() {
 
   let list = [], index = 0, opener = null, touchX = null;
 
+  const setImage = (src, alt, label) => {
+    const next = new Image();
+    next.decoding = 'async';
+    next.onload = () => {
+      img.src = src;
+      img.alt = alt;
+      caption.textContent = label;
+      requestAnimationFrame(() => {
+        img.classList.remove('lightbox__img--fade');
+      });
+    };
+    next.onerror = () => {
+      img.src = src;
+      img.alt = alt;
+      caption.textContent = label;
+      img.classList.remove('lightbox__img--fade');
+    };
+    img.classList.add('lightbox__img--fade');
+    next.src = src;
+  };
+
   const render = (i) => {
     index = (i + list.length) % list.length;
     const el = list[index];
     const thumb = el.querySelector('img');
-    img.classList.add('lightbox__img--fade');
-    setTimeout(() => {
-      img.src = el.dataset.full || thumb.currentSrc || thumb.src;   // data-full: шлях до великої версії фото
-      img.alt = thumb.alt;
-      caption.textContent = `${el.dataset.caption || thumb.alt} · ${index + 1} / ${list.length}`;
-      img.classList.remove('lightbox__img--fade');
-    }, prefersReducedMotion() ? 0 : 120);
+    const fullSrc = el.dataset.full || thumb.currentSrc || thumb.src;
+    const label = `${el.dataset.caption || thumb.alt} · ${index + 1} / ${list.length}`;
+    setImage(fullSrc, thumb.alt, label);
   };
 
   const open = (trigger) => {
-    // перегортуємо лише видимі фото тієї ж галереї (з урахуванням фільтра)
     list = [...document.querySelectorAll(`[data-lightbox][data-gallery="${trigger.dataset.gallery}"]`)]
       .filter((el) => !el.closest('[hidden]'));
     opener = trigger;
@@ -126,7 +142,7 @@ function initLightbox() {
 
   document.addEventListener('click', (e) => {
     let trigger = e.target.closest('[data-lightbox]');
-    const clone = e.target.closest('[data-clone-of]');   // клік по клону в слайдері відкриває оригінал
+    const clone = e.target.closest('[data-clone-of]');
     if (clone) trigger = document.querySelector(`[data-lightbox][data-slide="${clone.dataset.cloneOf}"]`);
     if (trigger) open(trigger);
   });
@@ -140,7 +156,7 @@ function initLightbox() {
     if (e.key === 'Escape') close();
     else if (e.key === 'ArrowLeft') render(index - 1);
     else if (e.key === 'ArrowRight') render(index + 1);
-    else if (e.key === 'Tab') {                       // фокус не виходить за межі модального вікна
+    else if (e.key === 'Tab') {
       const f = [btnClose, btnPrev, btnNext];
       const i = f.indexOf(document.activeElement);
       e.preventDefault();
@@ -167,11 +183,11 @@ function initContactForm() {
 
   const label = submit.querySelector('.form__submit-text');
   const defaultLabel = label.textContent;
-  const COOLDOWN_MS = 5000;        // після успіху кнопка ще 5 с заблокована
-  const TIMEOUT_MS = 15000;        // максимум очікування відповіді сервера
+  const COOLDOWN_MS = 5000;
+  const TIMEOUT_MS = 15000;
   const MSG = {
     success: 'Дякуємо! Ваша заявка успішно надіслана. Ми зв’яжемося з вами найближчим часом.',
-    error: 'Не вдалося надіслати заявку. Перевірте інтернет-з’єднання та спробуйте ще раз. Або напишіть нам у Telegram чи Instagram.',
+    error: 'Не вдалося надіслати заявку. Перевірте інтернет-з’єднання та спробуйте ще раз. Або напишіть нам у Telegram/Instagram.',
     notConfigured: 'Форму ще не підключено до Formspree: вкажіть свій ідентифікатор у атрибуті action форми.'
   };
   let isSubmitting = false;
@@ -191,10 +207,10 @@ function initContactForm() {
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    if (isSubmitting) return;                         // захист від повторної відправки
+    if (isSubmitting) return;
 
     ['name', 'contact'].forEach((n) => { form.elements[n].value = form.elements[n].value.trim(); });
-    if (!form.checkValidity()) {                      // обов'язкові поля
+    if (!form.checkValidity()) {
       form.reportValidity();
       return;
     }
@@ -217,7 +233,7 @@ function initContactForm() {
       });
       ok = res.ok;
     } catch (err) {
-      ok = false;                                     // мережа недоступна або тайм-аут
+      ok = false;
     } finally {
       clearTimeout(timer);
     }
@@ -225,12 +241,12 @@ function initContactForm() {
     if (ok) {
       form.reset();
       setStatus(MSG.success, 'success');
-      submit.classList.remove('btn--loading');        // індикатор зникає, кнопка ще заблокована
+      submit.classList.remove('btn--loading');
       submit.setAttribute('aria-busy', 'false');
       label.textContent = defaultLabel;
       setTimeout(() => { submit.disabled = false; isSubmitting = false; }, COOLDOWN_MS);
     } else {
-      setLoading(false);                              // дані збережені, можна повторити
+      setLoading(false);
       setStatus(MSG.error, 'error');
     }
   });
@@ -245,3 +261,4 @@ document.addEventListener('DOMContentLoaded', () => {
   initLightbox();
   initContactForm();
 });
+
